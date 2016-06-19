@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Helps with rendering on mobile devices -->
+  <!-- see: https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Search Form</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,100,900,100italic,300italic,400italic,500italic,700italic,900italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="../normalize.css">
+  <link rel="stylesheet" type="text/css" href="../colors.css">
+  <link rel="stylesheet" type="text/css" href="../global-component.css">
+  <link rel="stylesheet" type="text/css" href="../buttons/css/buttons.css">
+  <link rel="stylesheet" type="text/css" href="css/forms.css">
+</head>
+<body class="">
+  <h2>A Search Form and a a dropdown list of categories, consisting of the following inputs:</h2>
+  <ul>
+    <li>The “Search Box” as a text input</li>
+    <li>A dropdown (select input) containing at least 6 options representing categories.</li>
+    <li>A submit button, with the text “Search”.</li>
+  </ul>
+
+  <h2>Requirements:</h2>
+  <ul>
+    <li>Create each form in it’s own HTML document</li>
+    <li>Use an external stylesheet. Do not use inline CSS</li>
+    <li>Create a single stylesheet or one for each form</li>
+    <li>Style each form to look dazzling using CSS. Lack of customization may be interpreted as low effort.</li>
+    <li>Feel free to improve each form by adding additional elements. For example, adding a paragraph to explain a Credit/Debit Card’s CSV would be a User Experience improvement.</li>
+  </ul>
+
+  <p>Note: The pattern attribute of the input tag is not supported in Internet Explorer 9 and earlier versions, or in Safari.</p>
+
+  <p>Regarding styling to look "dazzling", I chose styling to look crisp, clean, and easy to interpret - hopefully that serves as appropriate "dazzle."</p>
+
+  <p>I chose to style based roughly on Google's Material Design.</p>
+
+  <p>Additionally, I think for a form that is to be a web component, it should be somewhat generically styled since forms are about gathering information, and therefore should be more about clarity and usability.</p>
+
+  <br>
+  <div class="row">
+
+    <form class="col s12">
+
+      <div class="form-header">
+        <div class="form-header-info">
+          <figure>
+            <img src="images/supercycles.png" alt="SuperCycles logo">
+              <figcaption></figcaption>
+          </figure>
+          <h2 class="form-title">Search</h2>
+          <p>Required fields are followed by <abbr title="required">*</abbr></p>
+        </div>
+      </div> <!-- end .form-header -->
+
+      <div class="row">
+        <div class="input-field-container col s12">
+          <!-- don't forget about placeholder="dummy text" for input elements -->
+          <input id="search_for" type="search" class="validate" name="search_for" required>
+          <!--<label for="first_name">First Name<span class="suffix">:</span></label>-->
+          <label for="search_for">Search for<span class="prefix"> . . . </span><span class="suffix">:</span></label>
+          <span class="check">&#10003;</span>
+          <abbr title="required">*</abbr>
+        </div>
+      </div> <!-- end .row -->
+
+      <div class="row">
+        <div class="input-field-container col s12">
+          <select id="search_in" class="validate" required>
+            <option value="" disabled selected>Choose a category</option>
+            <option value="bikes-frames">Bikes &amp; Frames</option>
+            <option value="parts-components">Bike Parts &amp; Components</option>
+            <option value="tires-tubes-wheels">Tires, Tubes &amp; Wheels</option>
+            <option value="clothing">Cycling Clothing</option>
+            <option value="shoes-pedals">Shoes &amp; Pedals</option>
+            <option value="helmets-sunglasses">Helmets &amp; Sunglasses</option>
+            <option value="nutrition-hydration">Nutrition &amp; Hydration</option>
+            <option value="lights-accessories">Lights &amp; Accessories</option>
+            <option value="tools-transport">Bike Tools &amp; Transport</option>
+            <option value="trainers">Bicycle Trainers</option>
+          </select>
+          <label for="search_in">Search in Category:</label>
+          <span class="check">&#10003;</span>
+          <abbr title="required">*</abbr>
+        </div>
+      </div> <!-- end .row -->
+
+      <div class="row">
+        <div class="button-container col s12">
+          <input id="submit" type="submit" value="Search" class="validate button raised foreground-white pomegranate">
+        </div>
+      </div> <!-- end .row -->
+
+    </form>
+
+  </div> <!-- end .row -->
+
+</body>
+</html>
