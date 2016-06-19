@@ -40,7 +40,7 @@ But suppose we need to have **other** elements capture input/show focus from the
 * If given a value of 0, the element can be focused via the keyboard and falls into the tabbing flow of the document.
 * Values greater than 0 create a priority level with 1 being the most important.
 
->I tend to shy away from trying to declare any tabindex as the regular document flow should be predictive enough but if creating a JavaScript-enabled interface, there may be times where tying something to a link actually doesn't make the most sense and having an element be able to receive focus via the keyboard as well as from the mouse can only be a good thing. [[17]][ref17]
+>I tend to shy away from trying to declare any tabindex as the regular document flow should be predictive enough but if creating a JavaScript-enabled interface, there may be times where tying something to a link actually doesn't make the most sense and having an element be able to receive focus via the keyboard as well as from the mouse can only be a good thing. \- [ACCESSIBILIY! - Making Elements Focusable with Tabindex](http://snook.ca/archives/accessibility_and_usability/elements_focusable_with_tabindex)
 
 <table>
     <tr>
@@ -85,12 +85,6 @@ But suppose we need to have **other** elements capture input/show focus from the
     <tr>
         <td><a href="http://accessible-colors.com/" target="_blank">Accessible Colors - foreground color vs. background color test</a></td>
     </tr>
-    <tr>
-        <td><a href="" target="_blank"></a></td>
-    </tr>
-    <tr>
-        <td><a href="" target="_blank"></a></td>
-    </tr>
 </table>
 
 <table>
@@ -115,9 +109,9 @@ But suppose we need to have **other** elements capture input/show focus from the
     <tr>
         <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">HTML - developer.mozilla.org</a></td>
     </tr>
-    <td>
-        <tr><a href="http://caniuse.com/" target="_blank">caniuse.com - check if certain features are supported in major browsers</a></tr>
-    </td>
+    <tr>
+        <td><a href="http://caniuse.com/" target="_blank">caniuse.com - check if certain features are supported in major browsers</a></td>
+    </tr>
     <tr>
         <td><a href="http://learn.shayhowe.com/">learn.shayhowe.com - good tutorial source</a> </td>
     </tr>
