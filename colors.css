@@ -1,0 +1,182 @@
+:root {
+  /* Using CSS Variables:
+     https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables
+  */
+
+  /* BEGIN Modern Developer colors */
+
+  --md-learn: rgb(75, 194, 212); /* #4bc2d4 56% */
+  --md-learn-hover: rgb(81, 208, 228); /* 61% */
+  --md-learn-click-light: rgb(88, 225, 247); /* 66% */
+  --md-learn-click-dark: rgb(67, 176, 193); /* 51% */
+
+  --md-labs: rgb(245, 122, 128); /* #f57a80 72% */
+  --md-labs-hover: rgb(239, 154, 159); /* 77% */
+  --md-labs-click-light: rgb(255, 165, 171); /* 82% */
+  --md-labs-click-dark: rgb(230, 113, 119); /* 67% */
+
+  --md-encyclopedia: rgb(243, 132, 186); /* #f384ba 74% */
+  --md-encyclopedia-hover: rgb(243, 160, 201); /* 79% */
+  --md-encyclopedia-click-light: rgb(251, 176, 215); /* 84% */
+  --md-encyclopedia-click-dark: rgb(229, 125, 175); /* 69% */
+
+  --md-profiles: rgb(55, 215, 129); /* #37d781 53% */
+  --md-profiles-hover: rgb(60, 236, 142); /* 58% */
+  --md-profiles-click-light: rgb(78, 242, 155); /* 63% */
+  --md-profiles-click-dark: rgb(49, 198, 118); /* 48% */
+
+  --md-know: rgb(204, 140, 246); /* #cc8cf6 76% */
+  --md-know-hover: rgb(212, 176, 238); /* 81% */
+  --md-know-click-light: rgb(223, 199, 241); /* 86% */
+  --md-know-click-dark: rgb(192, 130, 230); /* 71% */
+
+  /* END Modern Developer colors */
+
+
+  /* BEGIN colors from http://materializecss.com/ */
+
+  --materialize-pink: rgb(243, 152, 155); /* #f3989b; as used on materializecss.com; 77% */
+  /*--materialize-pink-hover: rgb(245, 165, 168);*/ /* #f5a5a8; as used on materializecss.com; 80% */
+  --materialize-pink-hover: rgb(255, 161, 165); /* 82% using #f3989b as a base */
+  --materialize-pink-click-light: rgb(246, 198, 200); /* 87% using #f3989b as a base */
+  --materialize-pink-click-dark: rgb(226, 141, 144); /* 72% using #f3989b as a base */
+
+  --materialize-green: rgb(38, 166, 154); /* #26a69a; as used on materializecss.com; 40% */
+  /*--materialize-green-hover: rgb(43, 187, 173);*/ /* #2bbbad; as used on materializecss.com; 45% */
+  --materialize-green-hover: rgb(41, 188, 174); /* 45% using #26a69a as a base */
+  --materialize-green-click-light: rgb(46, 209, 193); /* 50% using #26a69a as a base */
+  --materialize-green-click-dark: rgb(32, 146, 135); /* 35% using #26a69a as a base */
+
+  /* END colors from http://materializecss.com/ */
+
+  /* BEGIN color set from: http://flatuicolors.com/ */
+  /* color % from here: http://www.w3schools.com/colors/colors_picker.asp */
+
+  --turquoise: rgb(26,188,156); /* 42% */
+  --turquoise-hover: rgb(29,210,175);
+  --turquoise-click: rgb(23,166,137);
+  --turquoise-hover: rgb(29, 211, 176); /* 47% */
+  --turquoise-click-light: rgb(33, 232, 194); /* 52% */
+  --turquoise-click-dark: rgb(20, 168, 140); /* 37% */
+
+  --green-sea: rgb(22,160,133); /* 36% */
+  --green-sea-hover: rgb(25,182,152);
+  --green-sea-click: rgb(19,138,114);
+  --green-sea-hover: rgb(27, 182, 152); /* 41% */
+  --green-sea-click-light: rgb(31, 202, 168); /* 46% */
+  --green-sea-click-dark: rgb(18, 138, 114); /* 31% */
+
+
+  --emerald: rgb(46,204,113); /* 49% */
+  --emerald-hover: rgb(64,212,126);
+  --emerald-click: rgb(28,196,100);
+  --emerald-hover: rgb(51, 225, 125); /* 54% */
+  --emerald-click-light: rgb(56, 243, 135); /* 59% */
+  --emerald-click-dark: rgb(40, 184, 102); /* 44% */
+
+  --nephritis: rgb(39,174,96);
+  --nephritis-hover: rgb(44,195,107);
+  --nephritis-click: rgb(34,153,85);
+
+  --peter-river: rgb(52,152,219); /* #3498db 53% */
+  --peter-river-hover: rgb(74,163,223);
+  --peter-river-click: rgb(30,141,215);
+  --peter-river-hover: rgb(56, 166, 240); /* 58% */
+  --peter-river-click-light: rgb(73, 178, 249); /* 63% */
+  --peter-river-click-dark: rgb(54, 138, 193); /* 48% */
+
+  --belize-hole: rgb(41,128,185); /* #2980b9 44% */
+  --belize-hole-hover: rgb(46,142,206);
+  --belize-hole-click: rgb(36,114,164);
+  --belize-hole-hover: rgb(46, 141, 205); /* 49% */
+  --belize-hole-click-light: rgb(51, 153, 222); /* 54% */
+  --belize-hole-click-dark: rgb(35, 113, 165); /* 39% */
+
+  --amethyst: rgb(155,89,182); /* #9b59b6 53% */
+  --amethyst-hover: rgb(166,107,190);
+  --amethyst-click: rgb(144,71,174);
+  --amethyst-hover: rgb(169, 97, 199); /* 58% */
+  --amethyst-click-light: rgb(183, 105, 216); /* 63% */
+  --amethyst-click-dark: rgb(141, 80, 167); /* 48% */
+
+  --wisteria: rgb(142,68,173);
+  --wisteria-hover: rgb(155,80,186);
+  --wisteria-click: rgb(129,56,160);
+
+  --wet-asphalt: rgb(52,73,94);
+  --wet-asphalt-hover: rgb(61,86,110);
+  --wet-asphalt-click: rgb(43,60,78);
+
+  --midnight-blue: rgb(44,62,80); /* 24% */
+  --midnight-blue-hover: rgb(53,75,96);
+  --midnight-blue-click: rgb(35,49,64);
+  --midnight-blue-hover: rgb(53, 74, 96); /* 29% */
+  --midnight-blue-click-light: rgb(62, 85, 109); /* 34% */
+  --midnight-blue-click-dark: rgb(34, 48, 63); /* 19% */
+
+  --sunflower: rgb(241,196,15); /* 50% */
+  --sunflower-hover: rgb(242,202,39);
+  --sunflower-click: rgb(240,190,0);
+  --sunflower-hover: rgb(242, 202, 38); /* 55% */
+  --sunflower-click-light: rgb(244, 207, 62); /* 60% */
+  --sunflower-click-dark: rgb(217, 176, 13); /* 45% */
+
+  --orange: rgb(243,156,18); /* 51% */
+  --orange-hover: rgb(244,166,42);
+  --orange-click: rgb(242,146,0);
+  --orange-hover: rgb(222, 162, 66); /* 56% */
+  --orange-click-light: rgb(233, 173, 78); /* 61% */
+  --orange-click-dark: rgb(212, 142, 25); /* 46% */
+
+  --carrot: rgb(230,126,34);
+  --carrot-hover: rgb(233,139,57);
+  --carrot-click: rgb(227,113,11);
+
+  --pumpkin: rgb(211,84,0); /* #d35400 41% */
+  --pumpkin-hover: rgb(236,94,0);
+  --pumpkin-click: rgb(196,74,0);
+  --pumpkin-hover: rgb(235, 94, 0); /* 46% */
+  --pumpkin-click-light: rgb(237, 109, 22); /* 51% */
+  --pumpkin-click-dark: rgb(173, 77, 13); /* 36% */
+
+  --alizarin: rgb(231,76,60); /* 57% */
+  --alizarin-hover: rgb(234,97,83);
+  --alizarin-click: rgb(228,55,37);
+  --alizarin-hover: rgb(251, 82, 65); /* 62% */
+  --alizarin-click-light: rgb(244, 111, 97); /* 67% */
+  --alizarin-click-dark: rgb(191, 85, 74); /* 52% */
+
+  --pomegranate: rgb(192,57,43); /* 46% */
+  --pomegranate-hover: rgb(209,66,51);
+  --pomegranate-click: rgb(175,48,35);
+  --pomegranate-hover: rgb(198, 76, 62); /* 51% */
+  --pomegranate-click-light: rgb(194, 101, 91); /* 56% */
+  --pomegranate-click-dark: rgb(154, 66, 56); /* 41% */
+
+  --clouds: rgb(236,240,241);
+  --clouds-hover: rgb(251,252,252);
+  --clouds-click: rgb(221,228,230);
+
+  --silver: rgb(189,195,199);
+  --silver-hover: rgb(203,208,211);
+  --silver-click: rgb(175,182,187);
+
+  --concrete: rgb(149,165,166); /* 62% */
+  --concrete-hover: rgb(163,177,178);
+  --concrete-click: rgb(135,153,154);
+  --concrete-hover: rgb(162, 178, 180); /* 67% */
+  --concrete-click-light: rgb(175, 192, 194); /* 72% */
+  --concrete-click-dark: rgb(137, 151, 153); /* 57% */
+
+  --asbestos: rgb(127,140,141); /* #7f8c8d 53% */
+  --asbestos-hover: rgb(140,152,153);
+  --asbestos-click: rgb(114,128,129);
+  --asbestos-hover: rgb(141, 155, 157); /* 58% */
+  --asbestos-click-light: rgb(153, 168, 170); /* 63% */
+  --asbestos-click-dark: rgb(117, 129, 130); /* 48% */
+
+  /* END color set from: http://flatuicolors.com/ */
+
+}
+
+

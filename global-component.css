@@ -1,0 +1,137 @@
+:root {
+  /* Using CSS Variables:
+     https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables
+  */
+
+  /* box-shadow: 0 0 0 1px rgb(255.255.255),0 0 2px 4px rgb(131, 191, 252)
+     pretty much emulates default selected outline and its color in Chrome
+     on html button element if desired to add this to other elements */
+  /* accessibility outline can be more natively added by giving an element
+     that would normally NOT be accessible via keyboard a tabindex value */
+  /* see: http://snook.ca/archives/accessibility_and_usability/elements_focusable_with_tabindex */
+  /* While you get rid of default accessibility outline by specifying "outline: none",
+     if desired on elements not normally provided with this, it is better emulated
+     with "box-shadow: 0 0 0 1px rgb(255.255.255),0 0 2px 4px rgb(131, 191, 252);" in Chrome. */
+  --accessibility-box-shadow: 0 0 1px 5px rgb(131, 191, 252); /* #83bffc from Chrome color pick */
+
+  --foreground-color-white: color: #fff;
+  --foreground-color-black: color: #000;
+
+  --background-color-white: background-color: #fff;
+  --background-color-black: background-color: #000;
+
+  --light-box-shadow: 0 2px 5px 0 rgba(255,255,255,0.32),0 2px 10px 0 rgba(255,255,255,0.24);
+  --medium-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  --dark-box-shadow: 0 2px 5px 0 rgba(0,0,0,1),0 2px 10px 0 rgba(0,0,0,1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+/*
+  A good contrast between text and a background (and any important visual
+  cues like icons, buttons, etc.) is important for all users, but especially
+  those with less-than-perfect vision. Even if a user is not colorblind, poor
+  contrast can make it difficult for many users to know where to click or read
+  your content. Color alone is not a good enough call of action to a user. */
+body.contrast-test {
+-webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+}
+
+/* What the .clear-and-collapse-fix::after rule does is:
+
+   ::after - defines a pseudo element that is placed after all the content in
+      the .parent element.
+   content: ""; - this is the content of that pseudo element, i.e. nothing, we
+      want it empty.
+   display: block; - pseudo element is displayed as block element because we
+      want it to occupy the whole row in the page.
+   clear: left; - this tells the browser that this pseudo element should clear
+      all left floated elements before it, and by doing that it will expand the
+      height of the .parent element.
+
+  It could be used in lieu of overflow: hidden/auto; to prevent parent containing
+      element height collapse.
+
+  Use by assigning the .clear-and-collapse-fix class to the containing parent
+      element of floated elements, where you want the interaction with floated
+      elements to terminate after the parent containing element.
+*/
+.clear-and-collapse-fix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.clear-fix::after {
+  content: "";
+  clear: both;
+}
+
+.marginize-16px {
+  margin: 16px;
+}
+
+.border-white {
+  border: 1px solid #fff;
+}
+
+.border-gray {
+  border: 1px solid #9e9e9e;
+}
+
+.border-black {
+  border: 1px solid #000;
+}
+
+.box-shadow-white {
+  box-shadow: 0 2px 5px 0 rgba(255,255,255,0.64),0 2px 10px 0 rgba(255,255,255,0.48);
+}
+
+.box-shadow-gray {
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.box-shadow-black {
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.64),0 2px 10px 0 rgba(0,0,0,0.48);
+}
+
+.foreground-white {
+  color: #fff;
+}
+
+.foreground-black {
+  color: #000;
+}
+
+.background-white {
+  background-color: #fff;
+}
+
+.background-gray {
+  background-color: #9e9e9e;
+}
+
+.background-black {
+  background-color: #000;
+}
+
+.remove-accessibility-outline {
+  /* get rid of default blue outline on elements such as
+     html button and anchor <a> elements when clicked or tabbed-to */
+  /*outline: transparent solid 0px;*/
+  outline: none;
+}
+
+.remove-default-border {
+  /* get rid of default 3D-bevel-border, for example, on
+     certain html elements such as button */
+  border: 0;
+}
