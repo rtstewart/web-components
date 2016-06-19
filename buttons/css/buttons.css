@@ -1,0 +1,507 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 1em;
+}
+
+/* bring button element font size to match other elements here */
+/*button {
+  font-size: 1rem;
+}*/
+
+/* Keep in mind that the focus outline is an
+   accessibility and usability feature; it clues
+   the user into what element is currently focused. */
+/* for future reference, this can be used to
+   remove the default :focus blue outline on
+   all basic form elements, or all elements:
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+*:focus {
+  outline: none;
+} */
+
+.button-container {
+  margin-top: 2.1rem;
+}
+
+.foreground-color {
+  /* this works if need be */
+  /*var(--foreground-color-white);*/
+}
+
+/* the default .button class styling will be a flat button */
+.button {
+  /* get rid of possible default 3D-bevel-border, for example, on
+     certain html elements such as button */
+  /* could have instead used my global class .remove-default-border */
+  border: 0;
+  /* remove default accessibility outline; I'm using my own for consistency; */
+  outline: none;
+  display: inline-block;
+  /* margin: 1rem; this should occur within the
+    layout context as the .button is used */
+  padding: 0.75em 1em;
+  border-radius: 2px;
+  cursor: pointer;
+
+  /* text-related styles */
+
+  /* color now applied from global-component.css
+     through .foreground-black/white class */
+  /*color: white;*/
+
+  /* setting font-size here is necessary to bring the button
+     element font-size equal to other .button class elements */
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  word-spacing: 0.1em;
+  font-family:'Lucida Grande',Tahoma,Verdana,Arial,sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
+
+  /* The color "concrete" from colors.css will be the default background button
+    color if no other color class is specified. */
+  background-color: rgb(149,165,166);/* concrete */
+
+  /* http://www.w3schools.com/css/css3_transitions.asp */
+  /* http://www.w3schools.com/cssref/css3_pr_transition.asp */
+  /* transition: property duration timing-function delay|initial|inherit; */
+  /* a simple transition to smooth out CSS changes upon state changes */
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.button-sm {
+  font-size: .6em;
+}
+
+.button-md {
+  font-size: 0.9em;
+}
+
+.button-lg {
+  font-size: 1.2em;
+}
+
+.button.text-shadow {
+  /* text-shadow: h-shadow v-shadow blur-radius color|none|initial|inherit; */
+  /* I'm not completely sold on the text-shadow, but it does seem to
+     clarify edges when the background color gets light */
+  /* add this class to get the text shadow on the .button text */
+  text-shadow: 1px 1px 0px #666;
+}
+
+.button:hover {
+  /* The color "concrete" from colors.css will be the default background button
+    color if no other color class is specified. */
+  background-color: rgb(165, 182, 183); /* concrete-hover */
+  /* get rid of accessibility outline on hover for consistency
+   - <a> does this by default on hover, other elements don't */
+  /* outline: outline-color outline-style outline-width|initial|inherit; */
+  outline: none;
+}
+
+/* the :active pseudo-selector only works while the mouse is
+   held down; does not trigger a transition or animation with a tap; */
+/* :active is what is meant to occur when a .button is clicked */
+.button:active {
+  /* The color "concrete" from colors.css will be the default background button
+    color if no other color class is specified. */
+  background-color: rgb(137, 151, 153); /* concrete-click-dark */
+  background-color: rgb(175, 192, 194); /* concrete-click-light */
+}
+
+/* This will add the accessibility blue outline to .button
+   elements when they have focus. */
+/*.button:focus {
+  box-shadow: 0 0 2px 4px rgba(154, 200, 246, 1);
+}*/
+
+/* html button elements and anchors <a> will respond to being
+   clicked or tabbed-to using the :focus pseudo-selector, but NOT div;
+   this can also trigger an animation, but not on div; */
+.button:focus:not(.remove-accessibility-outline) {
+  box-shadow: 0 0 0 1px rgb(255,255,255),0 0 1px 5px rgb(131, 191, 252); /* emulates accessibility outline */
+  /*outline: red solid 2px;*/
+}
+
+/* matching <a> element native behavior when hovering, i.e., no outline */
+.button:focus:hover {
+  box-shadow: none;
+  /*outline: red solid 2px;*/
+}
+
+/* additional styling for raised buttons */
+/* http://www.w3schools.com/cssref/css3_pr_box-shadow.asp */
+/* box-shadow: none|h-shadow v-shadow blur spread color |inset|initial|inherit; */
+.button.raised {
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.button.raised:hover {
+  box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15);
+}
+
+/* the :active pseudo-selector only works while the mouse is
+   held down; does not trigger a transition or animation with a tap; */
+/* :active is what is meant to occur when a .button is clicked */
+/* why is this currently NOT occuring? */
+/* It is working now - the problem was the selector needed to be
+   .button.raised:hover:focus:active
+   and not just .button.raised:active */
+.button.raised:hover:focus:active {
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.30),0 2px 10px 0 rgba(0,0,0,0.21); /* meant for button physically down */
+  box-shadow: 0 8px 17px 0 rgba(0,0,0,0.20),0 6px 20px 0 rgba(0,0,0,0.18); /* meant for button physically up re: material design; */
+  /*outline: red solid 2px;*/
+}
+
+/* html button elements and anchors <a> will respond to being
+   clicked or tabbed-to using the :focus pseudo-selector, but NOT div; this can
+   also trigger an animation, but not on div; I left this here for future reference. */
+.button.raised:focus:not(.remove-accessibility-outline) {
+  box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15),0 0 0 1px rgb(255, 255, 255),0 0 1px 5px rgb(131, 191, 252);
+  box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15),0 0 0 1px rgb(255, 255, 255),var(--accessibility-box-shadow);
+  /*outline: orange solid 2px;*/
+}
+
+/* matching <a> element native behavior when hovering, i.e., no outline */
+.button.raised:focus:hover {
+  box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15);
+  /*outline: red solid 2px;*/
+}
+
+/* html button elements and anchors <a> will respond to being
+   clicked or tabbed-to using the :focus pseudo-selector, but NOT div; this can
+   also trigger an animation, but not on div; I left this here for future reference. */
+/*.raised:focus {
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.30),0 2px 10px 0 rgba(0,0,0,0.21);
+}*/
+
+/* BELOW: other color classes for buttons for inactive, hover, and active states */
+
+/* MD colors */
+.button.md-learn {
+  background-color: var(--md-learn);
+}
+.button:hover.md-learn {
+  background-color: var(--md-learn-hover);
+}
+.button:active.md-learn {
+  background-color: var(--md-learn-click-dark); /* meant for button physically down */
+  background-color: var(--md-learn-click-light); /* meant for button physically up re: material design; */
+}
+
+.button.md-labs {
+  background-color: var(--md-labs);
+}
+.button:hover.md-labs {
+  background-color: var(--md-labs-hover);
+}
+.button:active.md-labs {
+  background-color: var(--md-labs-click-dark); /* meant for button physically down */
+  background-color: var(--md-labs-click-light); /* meant for button physically up re: material design; */
+}
+
+.button.md-encyclopedia {
+  background-color: var(--md-encyclopedia);
+}
+.button:hover.md-encyclopedia {
+  background-color: var(--md-encyclopedia-hover);
+}
+.button:active.md-encyclopedia {
+  background-color: var(--md-encyclopedia-click-dark); /* meant for button physically down */
+  background-color: var(--md-encyclopedia-click-light); /* meant for button physically up re: material design; */
+}
+
+.button.md-profiles {
+  background-color: var(--md-profiles);
+}
+.button:hover.md-profiles {
+  background-color: var(--md-profiles-hover);
+}
+.button:active.md-profiles {
+  background-color: var(--md-profiles-click-dark); /* meant for button physically down */
+  background-color: var(--md-profiles-click-light); /* meant for button physically up re: material design; */
+}
+
+.button.md-know {
+  background-color: var(--md-know);
+}
+.button:hover.md-know {
+  background-color: var(--md-know-hover);
+}
+.button:active.md-know {
+  background-color: var(--md-know-click-dark); /* meant for button physically down */
+  background-color: var(--md-know-click-light); /* meant for button physically up re: material design; */
+}
+
+/* END MD colors */
+
+/* BEGIN FlatUI colors */
+
+.button.turquoise {
+  background-color: var(--turquoise);
+}
+.button:hover.turquoise {
+  background-color: var(--turquoise-hover);
+}
+.button:active.turquoise {
+  background-color: var(--turquoise-click-dark); /* meant for button physically down */
+  background-color: var(--turquoise-click-light); /* meant for button physically up re: material design; */
+}
+
+.button.green-sea {
+  background-color: var(--green-sea);
+}
+.button:hover.green-sea {
+  background-color: var(--green-sea-hover);
+}
+.button:active.green-sea {
+  background-color: var(--green-sea-click-dark); /* meant for button physically down */
+  background-color: var(--green-sea-click-light); /* meant for button physically up re: material design; */
+}
+
+.button.emerald {
+  background-color: var(--emerald);
+}
+.button:hover.emerald {
+  background-color: var(--emerald-hover);
+}
+.button:active.emerald {
+  background-color: var(--emerald-click-dark); /* meant for button physically down */
+  background-color: var(--emerald-click-light); /* meant for button physically up re: material design; */
+}
+
+.button.nephritis {
+  background-color: var(--nephritis);
+}
+.button:hover.nephritis {
+  background-color: var(--nephritis-hover);
+}
+.button:active.nephritis {
+  background-color: var(--nephritis-click-dark); /* meant for button physically down */
+  background-color: var(--nephritis-click-light); /* meant for button physically up re: material design; */
+}
+
+.button.peter-river {
+  background-color: var(--peter-river);
+}
+.button:hover.peter-river {
+  background-color: var(--peter-river-hover);
+}
+.button:active.peter-river {
+  background-color: var(--peter-river-click-dark); /* meant for button physically down */
+  background-color: var(--peter-river-click-light); /* meant for button physically up re: material design; */
+}
+
+.button.belize-hole {
+  background-color: var(--belize-hole);
+}
+.button:hover.belize-hole {
+  background-color: var(--belize-hole-hover);
+}
+.button:active.belize-hole {
+  background-color: var(--belize-hole-click-dark); /* meant for button physically down */
+  background-color: var(--belize-hole-click-light); /* meant for button physically up re: material design; */
+}
+
+.button.amethyst {
+  background-color: var(--amethyst);
+}
+.button:hover.amethyst {
+  background-color: var(--amethyst-hover);
+}
+.button:active.amethyst {
+  background-color: var(--amethyst-click-dark); /* meant for button physically down */
+  background-color: var(--amethyst-click-light); /* meant for button physically up re: material design; */
+}
+
+.button.wisteria {
+  background-color: var(--wisteria);
+}
+.button:hover.wisteria {
+  background-color: var(--wisteria-hover);
+}
+.button:active.wisteria {
+  background-color: var(--wisteria-click-dark); /* meant for button physically down */
+  background-color: var(--wisteria-click-light); /* meant for button physically up re: material design; */
+}
+
+.button.wet-asphalt {
+  background-color: var(--wet-asphalt);
+}
+.button:hover.wet-asphalt {
+  background-color: var(--wet-asphalt-hover);
+}
+.button:active.wet-asphalt {
+  background-color: var(--wet-asphalt-click-dark); /* meant for button physically down */
+  background-color: var(--wet-asphalt-click-light); /* meant for button physically up re: material design; */
+}
+
+.button.midnight-blue {
+  background-color: var(--midnight-blue);
+}
+.button:hover.midnight-blue {
+  background-color: var(--midnight-blue-hover);
+}
+.button:active.midnight-blue {
+  background-color: var(--midnight-blue-click-dark); /* meant for button physically down */
+  background-color: var(--midnight-blue-click-light); /* meant for button physically up re: material design; */
+}
+
+.button.sunflower {
+  background-color: var(--sunflower);
+}
+.button:hover.sunflower {
+  background-color: var(--sunflower-hover);
+}
+.button:active.sunflower {
+  background-color: var(--sunflower-click-dark); /* meant for button physically down */
+  background-color: var(--sunflower-click-light); /* meant for button physically up re: material design; */
+}
+
+.button.orange {
+  background-color: var(--orange);
+}
+.button:hover.orange {
+  background-color: var(--orange-hover);
+}
+.button:active.orange {
+  background-color: var(--orange-click-dark); /* meant for button physically down */
+  background-color: var(--orange-click-light); /* meant for button physically up re: material design; */
+}
+
+.button.carrot {
+  background-color: var(--carrot);
+}
+.button:hover.carrot {
+  background-color: var(--carrot-hover);
+}
+.button:active.carrot {
+  background-color: var(--carrot-click-dark); /* meant for button physically down */
+  background-color: var(--carrot-click-light); /* meant for button physically up re: material design; */
+}
+
+.button.pumpkin {
+  background-color: var(--pumpkin);
+}
+.button:hover.pumpkin {
+  background-color: var(--pumpkin-hover);
+}
+.button:active.pumpkin {
+  background-color: var(--pumpkin-click-dark); /* meant for button physically down */
+  background-color: var(--pumpkin-click-light); /* meant for button physically up re: material design; */
+}
+
+.button.alizarin {
+  background-color: var(--alizarin);
+}
+.button:hover.alizarin {
+  background-color: var(--alizarin-hover);
+}
+.button:active.alizarin {
+  background-color: var(--alizarin-click-dark); /* meant for button physically down */
+  background-color: var(--alizarin-click-light); /* meant for button physically up re: material design; */
+}
+
+.button.pomegranate {
+  background-color: var(--pomegranate);
+}
+.button:hover.pomegranate {
+  background-color: var(--pomegranate-hover);
+}
+.button:active.pomegranate {
+  background-color: var(--pomegranate-click-dark); /* meant for button physically down */
+  background-color: var(--pomegranate-click-light); /* meant for button physically up re: material design; */
+}
+
+.button.clouds {
+  background-color: var(--clouds);
+}
+.button:hover.clouds {
+  background-color: var(--clouds-hover);
+}
+.button:active.clouds {
+  background-color: var(--clouds-click-dark); /* meant for button physically down */
+  background-color: var(--clouds-click-light); /* meant for button physically up re: material design; */
+}
+
+.button.silver {
+  background-color: var(--silver);
+}
+.button:hover.silver {
+  background-color: var(--silver-hover);
+}
+.button:active.silver {
+  background-color: var(--silver-click-dark); /* meant for button physically down */
+  background-color: var(--silver-click-light); /* meant for button physically up re: material design; */
+}
+
+.button.concrete {
+  background-color: var(--concrete);
+}
+.button:hover.concrete {
+  background-color: var(--concrete-hover);
+}
+.button:active.concrete {
+  background-color: var(--concrete-click-dark); /* meant for button physically down */
+  background-color: var(--concrete-click-light); /* meant for button physically up re: material design; */
+}
+
+.button.asbestos {
+  background-color: var(--asbestos);
+}
+.button:hover.asbestos {
+  background-color: var(--asbestos-hover);
+}
+.button:active.asbestos {
+  background-color: var(--asbestos-click-dark); /* meant for button physically down */
+  background-color: var(--asbestos-click-light); /* meant for button physically up re: material design; */
+}
+/* ABOVE: other color classes for buttons for inactive, hover, and active states */
+
+/* this is the animation intended to occur upon clicking for future reference */
+/* add the .animated class to a .button class element to use */
+/* http://www.w3schools.com/css/css3_animations.asp */
+/* http://www.w3schools.com/cssref/css3_pr_animation.asp */
+/* animation: name duration timing-function delay iteration-count direction fill-mode play-state; */
+.animated.button.raised:hover:focus:active {
+  -webkit-animation: clicked 0.5s linear;
+  animation: clicked 0.5s linear;
+}
+@-webkit-keyframes clicked
+  {
+    /* box-shadow: 0 0 2px 4px rgb(125, 182, 244); emulates accessiblity box shadow */
+    0%   { background-color: rgb(165, 182, 183); box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15); } /* concrete-hover */
+    0%  { background-color: var(--green-sea-hover); box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15); }
+
+    50%  { background-color: rgb(135, 148, 150); box-shadow: 0 8px 17px 0 rgba(0,0,0,0.20),0 6px 20px 0 rgba(0,0,0,0.18),0 0 0 1px rgb(255,255,255),0 0 2px 4px rgb(131, 191, 252); } /* concrete-click-light */
+    50%  { background-color: var(--green-sea-click-light); box-shadow: 0 8px 17px 0 rgba(0,0,0,0.20),0 6px 20px 0 rgba(0,0,0,0.18),0 0 0 1px rgb(255,255,255),var(--accessibility-box-shadow); }
+
+    100%   { background-color: rgb(165, 182, 183); box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15); } /* concrete-hover */
+    100%  { background-color: var(--green-sea-hover); box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15); }
+  }
+
+@keyframes clicked
+  {
+    /* box-shadow: 0 0 2px 4px rgb(125, 182, 244); emulates accessiblity box shadow */
+    0%   { background-color: rgb(165, 182, 183); box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15); } /* concrete-hover */
+    0%  { background-color: var(--green-sea-hover); box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15); }
+
+    50%  { background-color: rgb(135, 148, 150); box-shadow: 0 8px 17px 0 rgba(0,0,0,0.20),0 6px 20px 0 rgba(0,0,0,0.18),0 0 0 1px rgb(255,255,255),0 0 2px 4px rgb(131, 191, 252); } /* concrete-click-light */
+    50%  { background-color: var(--green-sea-click-light); box-shadow: 0 8px 17px 0 rgba(0,0,0,0.20),0 6px 20px 0 rgba(0,0,0,0.18),0 0 0 1px rgb(255,255,255),var(--accessibility-box-shadow); }
+
+    100%   { background-color: rgb(165, 182, 183); box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15); } /* concrete-hover */
+    100%  { background-color: var(--green-sea-hover); box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15); }
+  }

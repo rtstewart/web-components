@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Helps with rendering on mobile devices -->
+  <!-- see: https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Buttons</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,100,900,100italic,300italic,400italic,500italic,700italic,900italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="../normalize.css">
+  <link rel="stylesheet" type="text/css" href="../colors.css">
+  <link rel="stylesheet" type="text/css" href="../global-component.css">
+  <link rel="stylesheet" type="text/css" href="css/buttons.css">
+</head>
+<body>
+  <p>The default behavior for &lt;a&gt;, &lt;button&gt;, and &lt;input&gt; elements, in Chrome, is to have what I will call an accessibility outline (the blue outline around the element) when it receives focus via tabbing/keyboard navigation. Once an element receives focus, while hovered over, the accessibility outline is removed for &lt;a&gt; elements, but NOT for &lt;button&gt; or &lt;input&gt; elements. Also, once an element has focus and is selected via mouse-click or [ENTER]/return key on the keyboard, the accessibility outline will remain to indicate that the element is still in focus. I view these accessibility considerations to be a good thing and will attempt to emulate them and make the behavior as consistent as possible with the .button class buttons created here.</p>
+  <p>Tabbing navigation (and therefore the accessibility outline on focus) is not provided by default for &lt;div&gt; elements. In an attempt to have uniform appearance and behavior for all .button class elements, and to provided for focusability through keyboarding/tabbing with all .button class elements, I have added the <code>tabindex="0"</code> attribute-value pair to .button class &lt;div&gt;s.</p>
+  <p>The default outline for elements having focus can be removed by adding the <code>.remove-accessibility-outline</code> class to the element. I have elected to keep/add this behavior for accessibility, by directly including rule sets in button.css that apply a box-shadow in appropriate states emulating the default in Chrome. I have also included a <code>.remove-accessibility-outline</code> class in global-component.css. Do keep accessibility in mind.</p>
+  <h3>The default <code>.button</code> class styling gives a flat-style button. The buttons on this page have a <code>.raised</code> class added which adds raised styling.</h3>
+  <h3>A Basic Button using <code>&lt;div&gt;</code> with a <code>.button</code> class.</h3>
+  <!-- see: http://snook.ca/archives/accessibility_and_usability/elements_focusable_with_tabindex -->
+  <div class="row">
+    <div class="button-container col s12">
+      <div tabindex="0" class="button foreground-white raised md-learn text-shadow">Buy Now</div>
+    </div>
+  </div> <!-- end .row -->
+
+  <h3>A <code>&lt;button&gt;</code> Element with a <code>.button</code> class.</h3>
+  <!-- button elements don't need a tabindex value set -
+       they are keyboard accessible and will show focus by default -->
+  <div class="row">
+    <div class="button-container col s12">
+      <button class="button foreground-white raised md-labs text-shadow">Send Mail</button>
+    </div>
+  </div> <!-- end .row -->
+
+  <h3>An Anchor (<code>&lt;a&gt;</code>) with a <code>.button</code> class.</h3>
+  <!-- <a> elements don't need a tabindex value set -
+       they are keyboard accessible and will show focus by default -->
+  <div class="row">
+    <div class="button-container col s12">
+      <a href="#" class="button foreground-white raised md-encyclopedia text-shadow">Search</a>
+    </div>
+  </div> <!-- end .row -->
+
+  <h3>An &lt;input&gt; element of <code>type="button"</code>  with a <code>.button</code> class.</h3>
+  <div class="row">
+    <div class="button-container col s12">
+      <input type="button" value="input type=button" class="button foreground-white raised md-profiles text-shadow">
+    </div>
+  </div> <!-- end .row -->
+
+  <h3>An &lt;input&gt; element of <code>type="submit"</code>  with a <code>.button</code> class.</h3>
+  <div class="row">
+    <div class="button-container col s12">
+      <input type="submit" value="submit" class="button foreground-white raised md-know text-shadow">
+    </div>
+  </div> <!-- end .row -->
+
+  <h3>Buttons of different sizes - <code>&lt;div&gt;</code>s with a <code>.button</code> class.</h3>
+  <div class="row">
+    <div class="button-container col s12">
+      <div tabindex="0" class="button foreground-white raised button-sm">A Small Button</div>
+    </div>
+  </div> <!-- end .row -->
+
+  <div class="row">
+    <div class="button-container col s12">
+      <div tabindex="0" class="button foreground-white raised button-md belize-hole">A Medium Button</div>
+    </div>
+  </div> <!-- end .row -->
+
+  <div class="row">
+    <div class="button-container col s12">
+      <div tabindex="0" class="button foreground-white raised button-lg pumpkin">A Large Button</div>
+    </div>
+  </div> <!-- end .row -->
+
+  <br>
+  <div>
+    <h4>References for the future:</h4>
+    <ol>
+      <li><a href="http://flatuicolors.com/" target="_blank">Flat UI Colors</a></li>
+      <li><a href="http://www.google.com/design/spec/components/buttons.html#" target="_blank">Google Material Design - Components - Buttons</a></li>
+      <li><a href="https://www.w3.org/TR/html401/interact/forms.html#adef-tabindex" target="_blank">Tabbing Navigation - w3.org</a></li>
+      <li><a href="http://www.wufoo.com/html5/attributes/27-tabindex.html" target="_blank">THE CURRENT STATE OF HTML5 FORMS - The tabindex Attribute</a></li>
+      <li><a href="http://snook.ca/archives/accessibility_and_usability/elements_focusable_with_tabindex" target="_blank">Making Elements Focusable with Tabindex</a></li>
+      <li><a href="http://stackoverflow.com/questions/18376815/trigger-animation-on-element-click-in-pure-css" target="_blank">Trigger animation on element click in pure CSS</a></li>
+      <li><a href="http://tangledindesign.com/how-to-trigger-css3-transitions-on-click-using-target/" target="_blank">How to Trigger CSS3 Transitions on Click using :target</a></li>
+      <li><a href="http://www.w3schools.com/colors/colors_converter.asp">Color Converter</a></li>
+      <li><a href="http://blog.teamtreehouse.com/triggering-css-animations-with-sibling-selectors" target="_blank">Triggering CSS Animations with Sibling Selectors</a></li>
+    </ol>
+  </div>
+
+</body>
+</html>
