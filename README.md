@@ -134,6 +134,12 @@ But suppose we need to have **other** elements capture input/show focus from the
         <td><a href="https://www.w3.org/TR/selectors/" target="_blank">[CSS] Selectors Level 3 - w3.org</a></td>
     </tr>
     <tr>
+        <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/pseudo-classes#Index_of_standard_pseudo-classes" target="_blank">Index of standard pseudo-classes - developer.mozilla.org</a></td>
+    </tr>
+    <tr>
+        <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/pseudo-elements" target="_blank">Pseudo-elements - developer.mozilla.org</a></td>
+    </tr>    
+    <tr>
         <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning" target="_blank">CSS Positioning - developer.mozilla.org</a></td>
     </tr>
     <tr>
@@ -272,6 +278,12 @@ But suppose we need to have **other** elements capture input/show focus from the
     </tr>
     <tr>
         <td><a href="http://responsivedesignchecker.com/" target="_blank">Responsive Design Checker</a></td>
+    </tr>
+    <tr>
+        <td><a href="https://mothereff.in/unquoted-attributes" target="_blank">Unquoted attribute value validator</a></td>
+    </tr>
+    <tr>
+        <td><a href="http://www.crockford.com/wrrrld/color.html" target="_blank">Standard 140 CSS color names</a></td>
     </tr>
 </table>
 
